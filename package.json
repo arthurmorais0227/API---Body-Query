@@ -5,18 +5,20 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev":"cls && nodemon server.js"
+    "dev": "cls && nodemon server.js"
   },
   "keywords": [
     "Body",
     "Query",
     "Backend",
-    "Aulas legais"
+    "Aulas legais",
+    "SENAI"
   ],
   "author": "Arthur Morais dos Santos",
   "license": "MIT",
   "description": "Aula para exemplos de HTTP - Body and Query!",
   "dependencies": {
+    "dotenv": "^17.2.1",
     "express": "^5.1.0",
     "nodemon": "^3.1.10"
   }
