@@ -1,0 +1,23 @@
+{
+  "name": "aula-29-08-25",
+  "version": "1.0.0",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev":"cls && nodemon server.js"
+  },
+  "keywords": [
+    "Body",
+    "Query",
+    "Backend",
+    "Aulas legais"
+  ],
+  "author": "Arthur Morais dos Santos",
+  "license": "MIT",
+  "description": "Aula para exemplos de HTTP - Body and Query!",
+  "dependencies": {
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10"
+  }
+}
