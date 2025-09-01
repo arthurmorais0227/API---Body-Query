@@ -142,7 +142,7 @@ app.post("/varinhas", (req, res) => {
     return res.status(400).json({
       success: false,
       message:
-        "MAterial, núcleo e comprimento são necessários para criar uma nova varinha!",
+        "Material, núcleo e comprimento são necessários para criar uma nova varinha!",
     });
   }
 
