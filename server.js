@@ -3,7 +3,7 @@ import express from "express";
 import dotenv from "dotenv";
 
 import dados from "./src/data/dados.js";
-const { bruxos } = dados
+const { bruxos, varinhas, pocoes } = dados
 // Criar aplicação com Express e configurar para aceitar JSON
 const app = express();
 app.use(express.json());
@@ -85,7 +85,50 @@ app.post('/bruxos', (req, res) => {
     });
 });
 
+app.get('/varinhas', (req, res) => {
+  const { material, nucleo, comprimento } = req.query;
+  let resultado = varinhas;
+
+  if (material) {
+    resultado = resultado.filter(v => v.material.toLowerCase() === material.toLowerCase());
+  }
+
+  if (nucleo) {
+    resultado = resultado.filter(v => v.nucleo == nucleo);
+  }
+
+  if (comprimento) {
+    resultado = resultado.filter(v => v.comprimento.toLowerCase().includes(especialidade.toLowerCase()));
+  }
+  res.status(200).json({
+    total: resultado.length,
+    data: resultado
+  });
+});
+
+app.get('/pocoes', (req, res) => {
+  const { nome, efeito } = req.query;
+  let resultado = pocoes;
+
+  if (nome) {
+    resultado = resultado.filter(p => p.nome.toLowerCase() === nome.toLowerCase());
+  }
+
+  if (efeito) {
+    resultado = resultado.filter(p => p.efeito == efeito);
+  }
+
+  res.status(200).json({
+    total: resultado.length,
+    data: resultado
+  });
+});
+
 // Iniciar servidor escutando na porta definida
 app.listen(serverPort, () => {
     console.log(`🚀 Servidor rodando em http://localhost:${serverPort} 🚀`);
 });
+
+
+
+
